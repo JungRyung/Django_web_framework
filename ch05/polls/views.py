@@ -1,9 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-
 from polls.models import Choice, Question
-
 
 def index(request):
     latest_question_list = Question.objects.all().order_by('-pub_date')[:5]
